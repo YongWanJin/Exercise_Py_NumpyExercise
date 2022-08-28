@@ -8,15 +8,14 @@ np.version.version
 
 # Q2. 0에서 9까지의 숫자로 구성된 1D 배열 생성
 
-a = np.arange(0, 10)
-print(a)
+result = np.arange(0, 10)
+print(result)
 
 
 # Q3. 모든 True의 3×3 numpy 배열 생성
 
-a = np.full((3, 3), True)
-print(a)
-print(a.ndim)
+result = np.full((3, 3), True)
+print(result)
 
 
 # Q4. 1D 배열에서 모든 홀수를 추출
@@ -135,4 +134,53 @@ print(result)
 
 arr = np.arange(9).reshape(3,3)
 
+arr_t = arr.T
+arr_t_switch = np.vstack((arr_t[1], arr_t[0], arr_t[2]))
+result = arr_t_switch.T
 
+print(result)
+
+
+# Q17. 2D 배열의 행을 뒤집습니다.
+
+arr = np.arange(9).reshape(3,3)
+
+result = np.vstack((arr[2], arr[1], arr[0]))
+
+print(result)
+
+
+# Q18. 2D 배열의 열을 뒤집습니다.
+
+arr = np.arange(9).reshape(3,3)
+
+arr_t = arr.T
+arr_t_switch = np.vstack((arr_t[2], arr_t[1], arr_t[0]))
+result = arr_t_switch.T
+
+print(result)
+
+
+# Q19. 5에서 10 사이의 임의의 십진수를 포함하는
+# 5x3 모양의 2D 배열을 만듭니다.
+
+result = np.random.randint(5, 11, 15).reshape(5, 3)
+
+print(result)
+
+
+# Q20. 5에서 10 사이의 임의의 부동 소수점을 포함하는
+# 5x3 모양의  2D 배열 만듭니다.
+
+result = np.random.uniform(5, 10, 15).reshape(5, 3)
+
+print(result)
+
+
+# Q21. numpy 배열의 소수점 이하 세 자리만 출력합니다.
+
+rand_arr = np.random.random((5,3))
+
+result = np.trunc(rand_arr*1000)/1000
+
+print(result)
