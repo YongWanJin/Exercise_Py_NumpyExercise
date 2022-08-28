@@ -19,12 +19,12 @@ print(a)
 print(a.ndim)
 
 
-# Q4. 1D 배열에서 모든 홀수를 추출??
+# Q4. 1D 배열에서 모든 홀수를 추출
 
 arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
-a = np.where(arr % 2 == 1)
-print(a[0])
+result = arr[(arr%2)!=0]
+print(result)
 
 
 # Q5. 모든 홀수 arr를 -1 로 바꿉니다.
@@ -75,13 +75,64 @@ result = a[idx]
 print(result)
 
 
-# Q11. 배열 a에서 b 배열에 있는 모든 항목을 제거합니다.
+# Q11. 두 파이썬 numpy 배열 사이의 공통 항목  출력
+
+a = np.array([1,2,3,2,3,4,3,4,5,6])
+b = np.array([7,2,10,2,7,4,9,4,9,8])
+
+a_unq = np.unique(a)
+b_unq = np.unique(b)
+result = np.intersect1d(a_unq, b_unq)
+
+print(result)
+
+
+# Q12. 배열 a에서 b 배열에 있는 모든 항목을 제거합니다.
 
 a = np.array([1,2,3,4,5])
 b = np.array([5,6,7,8,9])
 
+result = np.setdiff1d(a, b)
+print(result)
 
 
+# Q13. a, b두 배열의 요소가 일치하는 위치를 출력
 
+a = np.array([1,2,3,2,3,4,3,4,5,6])
+b = np.array([7,2,10,2,7,4,9,4,9,8])
+
+result = np.where(a==b)
+
+print(result[0])
+
+
+# Q14. a배열에서  5에서 10 사이의 모든 항목을 에서 가져옵니다 
+
+a = np.array([2, 6, 1, 9, 10, 3, 27])
+
+result = a[(a>=5) & (a<=10)]
+
+print(result)
+
+
+# Q15. maxx두 개의 스칼라에서 작동하는 함수를
+# 두 개의 배열에서 작동하도록 변환하시오
+
+def pair_max(x, y) :
+    
+    return np.maximum(x, y)
+
+
+a = np.array([5, 7, 9, 8, 6, 4, 5])
+b = np.array([6, 3, 4, 8, 9, 7, 1])
+
+result = pair_max(a,b)
+
+print(result)
+
+
+# Q16. 2d numpy 배열에서 배열의 1열과 2열을 바꿉니다
+
+arr = np.arange(9).reshape(3,3)
 
 
